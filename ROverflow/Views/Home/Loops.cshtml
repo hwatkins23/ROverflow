@@ -1,3 +1,163 @@
 ﻿@{
     ViewData["Title"] = "Loops";
 }
+
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="section-title">LOOPS</h1>
+                <p>Loops can execute a block of code as long as a specified condition is reached; they are handy because they save time, reduce errors, and they make code more readable.</p>
+                <p>R has two loop commands: while loops and for loops. With the while loop, we can execute a set of statements as long as a condition evaluates to true. A for loop is used for iterating over a sequence. </p>
+            </div>
+        </div>
+@*For Loops*@
+        <div class="row">
+            <div class="col-12">
+                <h2 class="section-title">For Loops</h2>
+                <p>A for loop is used for iterating over a sequence. This is less like the for keyword in other programming languages, and works more like an iterator method as found in other object-orientated programming language. </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <h4 class="section-title">Syntax:</h4>
+                <p>This is the syntax of a For Loop:</p>
+            </div>
+            <div class="col-6">
+                <br />
+                <p>
+                    <br />
+                    for (condition) { <br />
+                    Code to Execute <br />
+                    }
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <h4 class="section-title">Example:</h4>
+                <p>Now let's apply this syntax to a real example. In the for loop example to the right, i is declared and incremented within the condition of the for loop. The value of i will start at 1 and once it is greater than 10, the loop will no longer execute. If the condition is met, the value of i will be printed.</p>
+            </div>
+            <div class="col-6">
+                <br />
+                <p>
+                    <br />
+                    for (i in 1:10) { <br />
+                    print(i) <br />
+                    }
+                </p>
+            </div>
+        </div>
+    </div>
+    @*While Loops*@
+    <div class="row">
+        <div class="col-12">
+            <h2 class="section-title">While Loops</h2>
+            <p>
+                With the while loop we can execute a set of statements as long as a condition is true. The while loop requires relevant variables to be ready before the loop can execute.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <h4 class="section-title">Syntax:</h4>
+            <p>This is the syntax of a While Loop:</p>
+        </div>
+        <div class="col-6">
+            <br />
+            <p>
+                <br />
+                while (condition) { <br />
+                     Code to Execute <br />
+                }
+
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <h4 class="section-title">Example:</h4>
+            <p>
+                Now let's apply this syntax to a real example.In the while loop example to the right, i is declared to start a 1. Within the loop, the value of i will be printed out and then i will be incremented by 1. Once the value of i is no longer less than 11, the loop will no longer execute.</p>
+        </div>
+        <div class="col-6">
+            <br />
+            <p>
+                <br />
+                i <- 1 <br />
+                while (i < 11) { <br />
+ 	               print(i) <br />
+  	            i <- i + 1 <br />
+                }
+            </p>
+        </div>
+    </div>
+
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2>Quiz Time!</h2>
+
+        @*QUESTION 1*@
+    <form>
+        What happens if no break statement is placed in a repeat loop?
+        <br />
+        <br />
+        <input type="radio" id="A" name="q1" value="A">
+        <label for="q1">It will never execute</label>
+        <br>
+        <input type="radio" id="B" name="q1" value="B">
+        <label for="q1">It will execute forever</label>
+        <br>
+        <input type="radio" id="C" name="q1" value="C">
+        <label for="q1">It will execute up to 100 times</label>
+        <br />
+        <input type="radio" id="D" name="q1" value="D">
+        <label for="q1">It will execute only once</label>
+        <br>
+        <br>
+
+        @*QUESTION 2*@
+        Which looping statement is best when the number of iterations is unknown, yet the condition in which to stop performing the iteration is known?
+        <br />
+        <br />
+        <input type="radio" id="A" name="q1" value="A">
+        <label for="q1">for loop</label>
+        <br>
+        <input type="radio" id="B" name="q1" value="B">
+        <label for="q1">While loop</label>
+        <br>
+        <input type="radio" id="C" name="q1" value="C">
+        <label for="q1">repeat loop</label>
+        <br />
+        <input type="radio" id="D" name="q1" value="D">
+        <label for="q1">infinite loop</label>
+        <br>
+        <br>
+
+        @*QUESTION 3*@
+        How many times will the following code iterate? <br />
+            i <- 5 <br />
+             while (i < 11) { <br />
+            i = i+1 <br />
+            }
+
+        <br />
+        <br />
+        <input type="radio" id="A" name="q1" value="A">
+        <label for="q1">5</label>
+        <br>
+        <input type="radio" id="B" name="q1" value="B">
+        <label for="q1">10</label>
+        <br>
+        <input type="radio" id="C" name="q1" value="C">
+        <label for="q1">11</label>
+        <br />
+        <input type="radio" id="D" name="q1" value="D">
+        <label for="q1">6</label>
+        <br>
+        <br>
+        <button class="btn btn-primary btn-sm" type="submit" id="submit">Submit Quiz</button>
+    </form>
+    </div>
+</section>
