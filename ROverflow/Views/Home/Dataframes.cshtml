@@ -14,7 +14,8 @@
         </div>
         <div class="row">
             <div class="col-12">
-                <h2 class="section-title">Creating a dataframe</h2>
+                <br />
+                <h2 class="section-title">Creating a Dataframe</h2>
                 <p>There are several different methods that can be used to create a dataframe.</p>
             </div>
         </div>
@@ -25,7 +26,9 @@
             </div>
             <div class="col-6">
                 <br />
-                <p>insert syntax here</p>
+                <p>first_column <- c("Hi", "Hello")<br />
+                second_column <- c("Bye", "Good-bye")<br />
+                df <- data.frame(first_column, second_column)</p>
             </div>
         </div>
         <div class="row">
@@ -35,7 +38,10 @@
             </div>
             <div class="col-6">
                 <br />
-                <p>insert syntax here</p>
+                <p>df <- data.frame ( <br />
+                         first_column = c("Hi", "Hello"), <br />
+                         second_column = c("Bye", "Good-bye") <br />
+                         )</p>
             </div>
         </div>
         <div class="row">
@@ -46,17 +52,19 @@
             </div>
             <div class="col-6">
                 <br />
-                <p>insert syntax here</p>
+                <p>
+                    test <- read_csv("folder/test.csv")<br />
+                    df <- data.frame(test) <br />
+                </p>
             </div>
         </div>
     </div>
-</section>
 
 <!-- courses -->
-<section class="section">
     <div class="row">
         <div class="col-12">
-            <h2 class="section-title">Working with dataframes</h2>
+            <br />
+            <h2 class="section-title">Working with Dataframes</h2>
             <p>Here are some different ways to update and work with existing dataframes</p>
         </div>
     </div>
@@ -69,10 +77,11 @@
                     <div class="card-body">
                         <h4 class="card-title">Add a Column</h4>
                         <p class="card-text mb-4">
-                            This is a bunch of text detailing how to add a column
+                            Specify the new column that will be added to the dataframe and include all the 
+                            cells of the new data
                         </p>
                         <p>
-                            insert syntax
+                            df$newColumn <- c("text1", "text2", "text3")
                         </p>
 
                     </div>
@@ -84,10 +93,12 @@
                     <div class="card-body">
                         <h4 class="card-title">Add a Row</h4>
                         <p class="card-text mb-4">
-                            This is a bunch of text detailing how to add a row
+                            In order to add new rows to a dataframe, a new dataframe must be created 
+                            which can then be combined with the existing dataframe
                         </p>
+                        <p>This can be done using the rbind() function</p>
                         <p>
-                            insert syntax
+                            Combinedf <- rbind(originalDF, newDF)
                         </p>
 
                     </div>
@@ -99,10 +110,11 @@
                     <div class="card-body">
                         <h4 class="card-title">Grab a Column of Data</h4>
                         <p class="card-text mb-4">
-                            This is a bunch of text explaining how to get all the data from a single column
+                            Specify the column by listing the data frame then using $ 
+                            to select the column: df$columnName
                         </p>
                         <p>
-                            insert syntax
+                            Result <- data.frame(df$name)
                         </p>
 
                     </div>
@@ -114,10 +126,10 @@
                     <div class="card-body">
                         <h4 class="card-title">Grab a Row of Data</h4>
                         <p class="card-text mb-4">
-                            This is a bunch of text explaining how to get all the data from a row(s)
+                            Specify the row or range of rows you want to print from the dataframe
                         </p>
                         <p>
-                            insert syntax
+                            print(df[1:2])
                         </p>
 
                     </div>
@@ -127,12 +139,15 @@
             <div class="col-lg-4 col-sm-6 mb-5">
                 <div class="card p-0 border-primary rounded-0 hover-shadow">
                     <div class="card-body">
-                        <h4 class="card-title">Grab Data from Specific Column and Row</h4>
+                        <h4 class="card-title">Grab Data from Specific Cell(s)</h4>
                         <p class="card-text mb-4">
-                            This is a bunch of text explaining how to get specific data from the frame
+                            Specify the row(s) and column(s) you want to grab data from
                         </p>
                         <p>
-                            insert syntax
+                            The first numbers are for the row, the second are for the column. The 'c' is used to combine arguments.
+                        </p>
+                        <p>
+                            df[c(3,5)c(2,4)]
                         </p>
 
                     </div>
@@ -144,12 +159,18 @@
                     <div class="card-body">
                         <h4 class="card-title">Functions</h4>
                         <p class="card-text mb-4">
-                            Here are common functions to use with dataframes
+                            Some common functions when working with dataframes include:
                         </p>
                         <p>
-                            insert syntax
+                            Printing out details of the dataframe: str(df)
                         </p>
-
+                        <p>
+                            Printing out the summary data of the dataframe: print(summary(df))
+                        </p>
+                        <p>
+                            For more functions click 
+                            <a href="https://www.pluralsight.com/guides/manipulating-dataframes-r" target="_blank">here</a>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -162,7 +183,6 @@
         <h2>Quiz Time!</h2>
 
         <p>Finish Quiz</p>
-
         <form>
             A dataframe stores data in what format?
             <br />
@@ -180,6 +200,43 @@
             <label for="q1">A format similar to a python dictionary</label>
             <br>
             <br>
+            Each row in a dataframe should be unique
+            <br />
+            <br />
+            <input type="radio" id="true" name="q2" value="true">
+            <label for="q2">True</label>
+            <br>
+            <input type="radio" id="false" name="q2" value="false">
+            <label for="q2">False</label>
+            <br>
+            <br />
+            Which of the following is NOT a way to create a dataframe in R?
+            <br />
+            <br />
+            <input type="radio" id="A" name="q3" value="A">
+            <label for="q3">Combining individual vectors</label>
+            <br>
+            <input type="radio" id="B" name="q3" value="B">
+            <label for="q3">Creating and combining vectors together</label>
+            <br>
+            <input type="radio" id="C" name="q3" value="C">
+            <label for="q3">Reading from a CSV file and creating a dataframe</label>
+            <br />
+            <input type="radio" id="D" name="q3" value="D">
+            <label for="q3">Adding two columns together</label>
+            <br>
+            <br>
+            Given a dataframe with 3 columns (first_name, last_name, and phone_number),
+            list all of the first names stored in the dataframe
+            <br />
+            <input />
+            <br />
+            <br />
+            Given the same dataframe in the previous problem, add another row of data then print out the last two rows of data (including the row you added)
+            <br />
+            <input />
+            <br />
+            <br />
             <button class="btn btn-primary btn-sm" type="submit" id="submit">Submit Quiz</button>
         </form>
     </div>
