@@ -1,3 +1,317 @@
 ﻿@{
     ViewData["Title"] = "Data Cleaning";
 }
+
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="section-title">DATA CLEANING</h1>
+                <p>Data cleaning and visualization is all about understanding what data you have and manipulating it to a format that is workable for the jobs you have in mind.</p>
+                <p>Data visualization is all about asking questions like: How big is the dataset I am working with? What are the data types? Are there any outliers or corrupted data? Is all the data useful? Do I need to create any more computed columns to help my future analysis? Usually you create some graphs and charts to answer these questions.</p>
+                <p> Data cleaning is all about making your observations from data visualization a reality. This includes doing things like creating dummy codes, cleaning out outliers, and cutting out unused data.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <br />
+                <h2 class="section-title">Import Data</h2>
+                <p>There are several ways to import data but we will focus on the most common using the read.table() function.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <h4 class="section-title">read.table():</h4>
+                <p>To use this function you really just need a string with the path to your data, set whether you want headers for your data, and set how you want the data seperated:</p>
+            </div>
+            <div class="col-6">
+                <br />
+                <p>
+                    data_table <- read.table(file=‘PATH_TO_FILE’, header=TRUE, sep="\t" , stringsAsFactors=TRUE)
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <br />
+                <h2 class="section-title">Visualize with charts</h2>
+                <p>There are several ways to visualize data</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <h4 class="section-title">Bar chart:</h4>
+                <p>All you need to do is attach your data and set the x and y labels:</p>
+            </div>
+            <div class="col-6">
+                <br />
+                <p>
+                    attach(DATA_SET) <br />
+                    barplot($COLUMN, xlab = "X-axis", ylab = "Y-axis", main ="Bar-Chart")
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <h4 class="section-title">Histogram plot:</h4>
+                <p>All you need to do is pass the data set and the column you want to visualize. For more arguments you can add to the function see https://www.educba.com/histogram-in-r/  </p>
+            </div>
+            <div class="col-6">
+                <br />
+                <p>
+                    hist (DATA_SET $COLUMN)
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <h4 class="section-title">Scatter plot:</h4>
+                <p>You just need to attach the data set and declare which columns are your x and y variables</p>
+            </div>
+            <div class="col-6">
+                <br />
+                <p>
+                    attach(DATA_SET) <br />
+                    plot(X_VARIABLE, Y_VARIABLE, main="Scatterplot Example",
+                    xlab="X_VARIABLE_DESCRIPTION ", ylab="Y_VARIABLE_DESCRIPTION ", pch=19)
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <br />
+                <h2 class="section-title">Size of Data Set</h2>
+                <p>There is a simple function called info() that can help visualize the size of data sets.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <h4 class="section-title">info():</h4>
+                <p>To use this function you just need your data set:</p>
+            </div>
+            <div class="col-6">
+                <br />
+                <p>
+                    file.info("PATH_TO_CSV")$size <br />
+                    //Size is the variable that this function is outputting too.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <br />
+                <h2 class="section-title">Data Types</h2>
+                <p>It is important to see what data types are in each column of your data set so you know what you will be working with.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <h4 class="section-title">typeof()</h4>
+                <p>The typeof() function will tell you all of your datatypes in your in a dataframe. (See dataframes for more context):</p>
+            </div>
+            <div class="col-6">
+                <br />
+                <p>
+                    typeof(DATAFRAME$COLUMN_NAME)
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- courses -->
+    <div class="row">
+        <div class="col-12">
+            <br />
+            <h2 class="section-title">Data Cleaning</h2>
+            <p>Here are some different ways to clean data. NOTE: Requires you to have put the data set into a dataframe.</p>
+        </div>
+    </div>
+    <div class="container">
+        <!-- course list -->
+        <div class="row justify-content-center">
+            <!-- course item -->
+            <div class="col-lg-4 col-sm-6 mb-5">
+                <div class="card p-0 border-primary rounded-0 hover-shadow">
+                    <div class="card-body">
+                        <h4 class="card-title">Naming labels appropriatly</h4>
+                        <p class="card-text mb-4">
+                            The names() function returns your current labels and the rename() function allows you to change the labels to something more relevant.
+                        </p>
+                        <p>
+                            names(DATAFRAME)
+                            rename(EXISTING_COLUMN_NAME = NEW_COLUMN_NAME)
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <!-- course item -->
+            <div class="col-lg-4 col-sm-6 mb-5">
+                <div class="card p-0 border-primary rounded-0 hover-shadow">
+                    <div class="card-body">
+                        <h4 class="card-title">Changing Data Types</h4>
+                        <p class="card-text mb-4">
+                            In order to change data types of a given column the data needs to already
+                            be in a dataframe
+                        </p>
+                        <p>This can be done using the as.character(), as.numeric(), or as.logical() function</p>
+                        <p>
+                            as.numeric($COLUMN_NAME)
+                            as.character($COLUMN_NAME)
+                            as.logical($COLUMN_NAME)
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <!-- course item -->
+            <div class="col-lg-4 col-sm-6 mb-5">
+                <div class="card p-0 border-primary rounded-0 hover-shadow">
+                    <div class="card-body">
+                        <h4 class="card-title">Handling Duplicates</h4>
+                        <p class="card-text mb-4">
+                            Duplicates can happen for a number of reasons. You may need to 
+                            delete a column that is just duplicated values or you can use the unique()
+                            function to handle other cases.
+                        </p>
+                        <p>
+                            unique($COLUMN_NAME)
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <!-- course item -->
+            <div class="col-lg-4 col-sm-6 mb-5">
+                <div class="card p-0 border-primary rounded-0 hover-shadow">
+                    <div class="card-body">
+                        <h4 class="card-title">Missing Values</h4>
+                        <p class="card-text mb-4">
+                            Handle any values in columns that may be blank and change them to say NA
+                        </p>
+                        <p>
+                            DATAFRAME <- DATAFRAME %>% na_if(COLUMN_NAME, "NA")
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <!-- course item -->
+            <div class="col-lg-4 col-sm-6 mb-5">
+                <div class="card p-0 border-primary rounded-0 hover-shadow">
+                    <div class="card-body">
+                        <h4 class="card-title">Remove Invalid Entries or Outliers</h4>
+                        <p class="card-text mb-4">
+                            Sometimes data entries can be invalid by being a different kind of data type or be an extreme value
+                            in some cases it is better to just remove such values
+                        </p>
+                        <p>
+                            The following code example removes numeric values that are anywhere between 15 and 80.
+                        </p>
+                        <p>
+                            DATAFRAME <- DATAFRAME[-c(which(DATAFRAME$COLUMN_NAME> 80 | DATAFRAME$COLUMN_NAME < 15)), ]
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <!-- course item -->
+            <div class="col-lg-4 col-sm-6 mb-5">
+                <div class="card p-0 border-primary rounded-0 hover-shadow">
+                    <div class="card-body">
+                        <h4 class="card-title">Common Pitfalls</h4>
+                        <p class="card-text mb-4">
+                           We can't warn you about everything but here is a good start
+                        </p>
+                        <p>
+                            Don't get stuck in the weeds trying to fix every piece of data. 
+                            There is a big chance that data that needs a lot of cleaning may be better 
+                            left out of the data set that is being used.
+                        </p>
+                        <p>
+                            Don't change data permanently. It is best practice to keep an original 
+                            dataset and create new variables for modified versions of it.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2>Quiz Time!</h2>
+
+        <p>Finish Quiz</p>
+        <form>
+            Which function casts an entire column as numerics?
+            <br />
+            <br />
+            <input type="radio" id="A" name="q1" value="A">
+            <label for="q1">as.character()</label>
+            <br>
+            <input type="radio" id="B" name="q1" value="B">
+            <label for="q1">INT</label>
+            <br>
+            <input type="radio" id="C" name="q1" value="C">
+            <label for="q1">as.numeric()</label>
+            <br />
+            <input type="radio" id="D" name="q1" value="D">
+            <label for="q1">as.number()</label>
+            <br>
+            <br>
+            Which one of the following is NOT typically used for data visualization?
+            <br />
+            <br />
+            <input type="radio" id="A" name="q2" value="A">
+            <label for="q2">Box and Whiskers plot</label>
+            <br>
+            <input type="radio" id="B" name="q2" value="B">
+            <label for="q2">Scatter plot</label>
+            <br>
+            <input type="radio" id="C" name="q2" value="C">
+            <label for="q2">Bar chart</label>
+            <br>
+            <input type="radio" id="D" name="q2" value="D">
+            <label for="q2">Histogram</label>
+            <br>
+            <input type="radio" id="E" name="q2" value="E">
+            <label for="q2">All of these could be used</label>
+            <br>
+            <br />
+            What is data cleaning?
+            <br />
+            <br />
+            <input type="radio" id="A" name="q3" value="A">
+            <label for="q3">Looking around the data</label>
+            <br>
+            <input type="radio" id="B" name="q3" value="B">
+            <label for="q3">Scrubbing the heck out of the data with a toothbrush</label>
+            <br>
+            <input type="radio" id="C" name="q3" value="C">
+            <label for="q3">Molding the data into a cleaner version that is more easily analyzed</label>
+            <br />
+            <input type="radio" id="D" name="q3" value="D">
+            <label for="q3">Taking out null values and outliers</label>
+            <br>
+            <input type="radio" id="E" name="q3" value="E">
+            <label for="q3">C and D</label>
+            <br>
+            <br>
+            Download the sample dataset and import it. Change one of the column names to something more fitting.
+            Make a histogram of the resulting columns.
+            <br />
+            <input />
+            <br />
+            <br />
+            Download the sample dataset and import it. Change one of the column data types after visualizing the data types. 
+            Remove duplicates and fix the missing values.
+            <br />
+            <input />
+            <br />
+            <br />
+            <button class="btn btn-primary btn-sm" type="submit" id="submit">Submit Quiz</button>
+        </form>
+    </div>
+</section>
