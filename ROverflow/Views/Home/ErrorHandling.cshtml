@@ -1,3 +1,51 @@
 ﻿@{
     ViewData["Title"] = "Error Handling";
 }
+
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="section-title">Error Handling</h1>
+                <p>Debugging is the art and science of fixing unexpected problems in your code.</p>
+                <p>There are many tools in R that can help programmers get to the root cause of an error in their code. R also has many useful functions such as traceback() and browser(), and RStudio also has many interactive tools that can make debugging easier and less stressful.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <h2 class="section-title">Tools for Debugging in R</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                @*<h4 class="section-title">traceback()</h4>*@
+                <p>traceback()</p>
+            </div>
+            <div class="col-6">
+                <br />
+                <p>By default traceback() prints the call stack of the last uncaught error, i.e., the sequence of calls that lead to the error. This is useful when an error occurs with an unidentifiable error message. It can also be used to print the current stack or arbitrary lists of deparsed calls.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                @*<h4 class="section-title">Example:</h4>*@
+                <p>browser()</p>
+            </div>
+            <div class="col-6">
+                <br />
+                <p>This function provides the user with the possibility to inspect the elements of the function environment. It interrupts the execution of an expression and allows the inspection of the environment where browser() was called from.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                @*<h4 class="section-title">Example:</h4>*@
+                <p>Editor Breakpoint</p>
+            </div>
+            <div class="col-6">
+                <br />
+                <p>In addition to using the debug() and browser() functions, if you are using RStudio, you can set an editor breakpoint. This can be done by clicking to the left of the line or by selecting the line where the breakpoint will be set and typing shift+F9.</p>
+            </div>
+        </div>
+    </div>
+</section>
