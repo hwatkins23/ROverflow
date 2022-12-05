@@ -39,6 +39,10 @@ namespace ROverflow.Controllers
         {
             return View();
         }
+        public IActionResult Comments()
+        {
+            return View();
+        }
         public IActionResult Loops()
         {
             return View();
