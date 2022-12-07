@@ -1,3 +1,269 @@
 ﻿@{
     ViewData["Title"] = "Packages";
 }
+
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="section-title">PACKAGES</h1>
+                <p>Packages in R are extensions of the R programming language that contain code, functions, sample data and documentation.</p>
+                <p>Packages are essentially pre-written code that make it much simpler to perform common tasks, including many statistical functions. R packages enable users to easily manipulate, organize, analyze, and display data. Packages are stored in a “library” within R. By default, when you start the R console or R studio, a set of packages are preinstalled. While these packages are useful, others exist that you will likely want to use when working with data. </p>
+                <p>Below is a list of those commonly used packages: </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <br />
+                <h2 class="section-title">1: dplyr</h2>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h3 class="section-title">Used for data wrangling and analysis specifically with dataframes</h3>
+                <h4 class="section-title">How to Install:</h4>
+                <p>
+                    Install package: install.packages(“dplyr”)<br />
+                    Load package: library(“dplyr”)<br /><br />
+
+                </p>
+
+                <h4>
+                    There are 8 Key Functions:
+                </h4>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-sm-6 mb-5">
+                <div class="card p-0 border-primary rounded-0 hover-shadow">
+                    <div class="card-body">
+                        <h4 class="card-title">filter():</h4>
+                        <p class="card-text mb-4">
+                            filter(variable1 ==, >, < value_you_want_variable_compared_to | variable2 ==, >, < value_you_want_variable_compared_to)<br />
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mb-5">
+                <div class="card p-0 border-primary rounded-0 hover-shadow">
+                    <div class="card-body">
+                        <h4 class="card-title">arrange():</h4>
+                        <p class="card-text mb-4">
+                            arrange(variable1, variable2, variable3, desc(variable4))<br />
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mb-5">
+                <div class="card p-0 border-primary rounded-0 hover-shadow">
+                    <div class="card-body">
+                        <h4 class="card-title">Other common functions::</h4>
+                        <p class="card-text mb-4">
+                            - select()<br />
+                            - rename()<br />
+                            - mutate()<br />
+                            - Group_by()<br />
+                            - summarize()<br />
+                            - left_join()<br />
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-12">
+                <br />
+                <h2 class="section-title">2: tidyr</h2>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h3 class="section-title">Used to make data “tidy” and clean</h3>
+
+                <p>
+                    Most data in R will be "untidy" when you get it, despite the fact that it is very simple to format it. As such, making the data "tidy" is necessary.<br /><br />
+
+                    Tidying data: Each variable must have its own column. Each observation must have its own row. Each value must have its own cell. <br />
+
+                    There are dozens of functions you can use with tidyr. The following are some common ones:
+                </p>
+
+                <h4 class="section-title">How to Install:</h4>
+                <p>
+                    Install package: install.packages(“tidry”)<br />
+                    Load package: library(“tidyr”)<br /><br />
+
+                </p>
+
+            </div>
+        </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-sm-6 mb-5">
+                    <div class="card p-0 border-primary rounded-0 hover-shadow">
+                        <div class="card-body">
+                            <h4 class="card-title">pivot_longer()</h4>
+                            <p class="card-text mb-4">
+                                Given the following data: <br />
+
+
+                                Tidy the data: <br />
+
+                                Output data: <br />
+
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-5">
+                    <div class="card p-0 border-primary rounded-0 hover-shadow">
+                        <div class="card-body">
+                            <h4 class="card-title">Other common functions:</h4>
+                            <p class="card-text mb-4">
+                                pivot_wider()<br />
+                                separate()<br />
+                                unite()<br />
+                                fill()<br />
+                                complete()<br />
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <div class="row">
+            <div class="col-12">
+                <br />
+                <h2 class="section-title">3: ggplot2</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h3 class="section-title">Used to build graphs with categorical or numerical data, as well as with multiple variables.</h3>
+                <p>
+                    Includes 3 key components:<br />
+                    - Data<br />
+                    - Aesthetic mapping<br />
+                    - geom/object<br />
+
+                </p>
+                <h4>How to Install:</h4>
+                <p>
+                    Install package: install.packages(“ggplot2”)<br />
+                    Load package: library(“ggplot2”)<br />
+                </p>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-sm-6 mb-5">
+                <div class="card p-0 border-primary rounded-0 hover-shadow">
+                    <div class="card-body">
+                        <h4 class="card-title">Scatter</h4>
+                        <p class="card-text mb-4">
+                            ggplot(data = mpg) +<br />
+                            geom_point(aesthetic_mapping(x =variable1, y=variable2))<br /><br />
+                            ggplot(mpg) + <br />
+                            geom_point(aesthitic_mapping(x = variable1, y = variable 2, color = class))
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mb-5">
+                <div class="card p-0 border-primary rounded-0 hover-shadow">
+                    <div class="card-body">
+                        <h4 class="card-title">Bar</h4>
+                        <p class="card-text mb-4">
+                            ggplot(mpg) + <br />
+                            geom_bar(aesthetic_mapping(x=class))
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mb-5">
+                <div class="card p-0 border-primary rounded-0 hover-shadow">
+                    <div class="card-body">
+                        <h4 class="card-title">Other types of graphs</h4>
+                        <p class="card-text mb-4">
+                            Box<br />
+                            Facet<br />
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2>Quiz Time!</h2>
+
+        <p>Finish Quiz</p>
+        <form>
+            Which package normalizes data in R? 
+            <br />
+            <br />
+            <input type="radio" id="A" name="q1" value="A">
+            <label for="q1">tidyr</label>
+            <br>
+            <input type="radio" id="B" name="q1" value="B">
+            <label for="q1">cleanr</label>
+            <br>
+            <input type="radio" id="C" name="q1" value="C">
+            <label for="q1">ggplot2</label>
+            <br />
+            <input type="radio" id="D" name="q1" value="D">
+            <label for="q1">dplyr</label>
+            <br>
+            <br>
+            By default, all packages needed to run R are preinstalled.
+            <br />
+            <br />
+            <input type="radio" id="true" name="q2" value="true">
+            <label for="q2">True</label>
+            <br>
+            <input type="radio" id="false" name="q2" value="false">
+            <label for="q2">False</label>
+            <br>
+            <br />
+            Where are packages stored? 
+            <br />
+            <br />
+            <input type="radio" id="A" name="q3" value="A">
+            <label for="q3">in a "library"</label>
+            <br>
+            <input type="radio" id="B" name="q3" value="B">
+            <label for="q3">in a single github repo</label>
+            <br>
+            <input type="radio" id="C" name="q3" value="C">
+            <label for="q3">they aren't stored because they don't need to be</label>
+            <br />
+            <input type="radio" id="D" name="q3" value="D">
+            <label for="q3">in the package manager</label>
+            <br>
+            <br>
+            Given a set of variables that need to be displayed in a certain order, which function would you use, and which package does it come from? 
+            <br />
+            <input />
+            <br />
+            <br />
+            Given a dataset with the variables x, y, and z, filter the data to show all x values equal to 5 and all y values greater than 10. 
+            <br />
+            <input />
+            <br />
+            <br />
+            <button class="btn btn-primary btn-sm" type="submit" id="submit">Submit Quiz</button>
+        </form>
+    </div>
+</section>
